@@ -5,5 +5,6 @@ if n % 100 != 0:
 else:
     a = n // 500
     b = (n % 500)/100
-    count = a + b
+    count = a + int(b)
+    
     print(count)
