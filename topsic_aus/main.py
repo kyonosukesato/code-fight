@@ -1,20 +1,19 @@
 #ジャングルジム
 
-from audioop import reverse
-
-
 N = int(input())
 A = list(map(int, input().split()))
+B = []
+
+for h in reversed(A):
+    B.append(h)
 
 rf = 0
 lf = 0
 
 for i in range(N-1):
     rf += max(0,A[i+1] - A[i])
-#print(rf)
+    lf += max(0,B[i+1] - B[i])
 
-for j in range(N,1,-1):
-    lf = max(0, A[i-1] - A[i])
-#print(lf)
+    #print(f"rf = {rf}, lf = {lf}")
 
-print(max(rf,lf))
+print(min(rf,lf))
